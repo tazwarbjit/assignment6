@@ -1,47 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Users Registered</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="styles.css">
-    </head>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Members</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
 <body>
 
-    <header class="text-center py-4">
-        <img src="https://vendelux.com/wp-content/uploads/web-summit-1.png" alt="Event Logo">
-        <h1 class="mt-5">The Web Summit Conference Registration 2023</h1>
-        <p class="text-justify">Welcome to the Web Summit 2023, where innovation meets opportunity in the digital realm. 
-            Join us for an electrifying journey through the latest tech advancements, visionary insights, 
-            and unparalleled networking. Discover the future of technology with thought-provoking sessions 
-            led by industry luminaries, immerse yourself in cutting-edge discussions, and connect with fellow 
-            tech enthusiasts from around the globe. Whether you're a developer, entrepreneur, or simply curious 
-            about the digital frontier, Web Summit 2023 promises to ignite your imagination, spark collaboration, 
-            and shape the tech landscape of tomorrow. Don't miss this extraordinary online event that redefines 
-            what's possible in the world of technology!</p>
-    </header>
+  <header class="text-center py-4">
+    <img src="https://vendelux.com/wp-content/uploads/web-summit-1.png" width="200" height="120" alt="Event Logo">
+    <h1 class="mt-5">The Web Summit Conference Registration 2023</h1>
+    <p class="text-justify">Welcome to the Web Summit 2023, where innovation meets opportunity in the digital realm.
+      Join us for an electrifying journey through the latest tech advancements, visionary insights,
+      and unparalleled networking. Discover the future of technology with thought-provoking sessions
+      led by industry luminaries, immerse yourself in cutting-edge discussions, and connect with fellow
+      tech enthusiasts from around the globe. Whether you're a developer, entrepreneur, or simply curious
+      about the digital frontier, Web Summit 2023 promises to ignite your imagination, spark collaboration,
+      and shape the tech landscape of tomorrow. Don't miss this extraordinary online event that redefines
+      what's possible in the world of technology!</p>
+  </header>
 
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Users Registered</h2>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Organization</th>
-                        <th>Preferred Session</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- dynamically insert Users -->
-                </tbody>
-            </table>
+  <section class="names mb-5">
+    <h2 class="text-center mb-4">Users Registered</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Organization</th>
+            <th>Preferred Session</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- dynamically insert Users -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 details">
+          <h3>The Web Summit 2023</h3>
+          <p>Date: August 20, 2023</p>
         </div>
-    </section>
+        <div class="col-md-6 details">
+          <h3>Contact</h3>
+          <p>Email: contact@websummit.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <h3>Follow Us</h3>
+          <a href="#" class="mr-3">Facebook</a>
+          <a href="#" class="mr-3">Twitter</a>
+          <a href="#" class="mr-3">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-<!-- <div style="overflow-x: auto;">
+  <!-- <div style="overflow-x: auto;">
   <table role="table" aria-label="Country Information">
     <thead>
       <tr>
@@ -68,80 +95,80 @@
   
 </div> -->
 
-<script>
-  const countries = [
-    { name: "United States", population: 331002651, languages: "English" },
-    { name: "China", population: 1439323776, languages: "Chinese" },
-    { name: "India", population: 1380004385, languages: "Hindi, English" },
-    { name: "Brazil", population: 212559417, languages: "Portuguese" },
-    { name: "Russia", population: 145934462, languages: "Russian" },
-    { name: "Japan", population: 126476461, languages: "Japanese" },
-    { name: "Mexico", population: 128932753, languages: "Spanish" },
-    { name: "Germany", population: 83783942, languages: "German" },
-    { name: "Egypt", population: 102334404, languages: "Arabic" },
-    { name: "South Korea", population: 51269185, languages: "Korean" },
-  ];
+  <script>
+    const countries = [
+      { name: "United States", population: 331002651, languages: "English" },
+      { name: "China", population: 1439323776, languages: "Chinese" },
+      { name: "India", population: 1380004385, languages: "Hindi, English" },
+      { name: "Brazil", population: 212559417, languages: "Portuguese" },
+      { name: "Russia", population: 145934462, languages: "Russian" },
+      { name: "Japan", population: 126476461, languages: "Japanese" },
+      { name: "Mexico", population: 128932753, languages: "Spanish" },
+      { name: "Germany", population: 83783942, languages: "German" },
+      { name: "Egypt", population: 102334404, languages: "Arabic" },
+      { name: "South Korea", population: 51269185, languages: "Korean" },
+    ];
 
-  const tableBody = document.querySelector("tbody");
-  const tableHeader = document.querySelector("thead");
+    const tableBody = document.querySelector("tbody");
+    const tableHeader = document.querySelector("thead");
 
-  const removeTableBtn = document.getElementById("removeTable");
+    const removeTableBtn = document.getElementById("removeTable");
 
-  const removeCountryBtn = document.getElementById("removeCountry");
+    const removeCountryBtn = document.getElementById("removeCountry");
 
-  const addCountryBtn = document.getElementById("addRow");
+    const addCountryBtn = document.getElementById("addRow");
 
-  const countryNameInput = document.getElementById("countryName");
-  const populationInput = document.getElementById("population");
-  const languagesInput = document.getElementById("languages");
+    const countryNameInput = document.getElementById("countryName");
+    const populationInput = document.getElementById("population");
+    const languagesInput = document.getElementById("languages");
 
-  function renderTable() {
-    tableBody.innerHTML = "";
-    countries.forEach((country) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
+    function renderTable() {
+      tableBody.innerHTML = "";
+      countries.forEach((country) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
         <td>${country.name}</td>
         <td>${country.population.toLocaleString()}</td>
         <td>${country.languages}</td>
       `;
-      tableBody.appendChild(row);
-    });
-  }
-
-  function sortTable(column) {
-    countries.sort((a, b) => a[column] > b[column] ? 1 : -1);
-    renderTable();
-  }
-
-  function randomizePopulation() {
-    countries.forEach((country) => {
-      const randomChange = Math.floor(Math.random() * 1000000) - 500000;
-      country.population += randomChange;
-    });
-    renderTable();
-  }
-
-  tableHeader.addEventListener("click", (event) => {
-    if (event.target.dataset.column) {
-      sortTable(event.target.dataset.column);
+        tableBody.appendChild(row);
+      });
     }
-  });
 
-  removeTableBtn.addEventListener("click", () => {
-    if(document.querySelector("table")) {
-      document.querySelector("table").remove();
-      removeCountryBtn.remove();
+    function sortTable(column) {
+      countries.sort((a, b) => a[column] > b[column] ? 1 : -1);
+      renderTable();
     }
-  });
 
-  removeCountryBtn.addEventListener("click", () => {
-    countries.splice(countries.length-1, 1);
-    renderTable();
-  });
+    function randomizePopulation() {
+      countries.forEach((country) => {
+        const randomChange = Math.floor(Math.random() * 1000000) - 500000;
+        country.population += randomChange;
+      });
+      renderTable();
+    }
 
-  addCountryBtn.addEventListener("click", () => {
-    if(countryNameInput.value !== '' && populationInput.value !== '' && languagesInput.value !== '') {
-      const newCountry = {
+    tableHeader.addEventListener("click", (event) => {
+      if (event.target.dataset.column) {
+        sortTable(event.target.dataset.column);
+      }
+    });
+
+    removeTableBtn.addEventListener("click", () => {
+      if (document.querySelector("table")) {
+        document.querySelector("table").remove();
+        removeCountryBtn.remove();
+      }
+    });
+
+    removeCountryBtn.addEventListener("click", () => {
+      countries.splice(countries.length - 1, 1);
+      renderTable();
+    });
+
+    addCountryBtn.addEventListener("click", () => {
+      if (countryNameInput.value !== '' && populationInput.value !== '' && languagesInput.value !== '') {
+        const newCountry = {
           name: countryNameInput.value,
           population: parseInt(populationInput.value),
           languages: languagesInput.value,
@@ -154,17 +181,18 @@
         languagesInput.value = "";
 
         renderTable();
-    }
-  });
+      }
+    });
 
-  renderTable();
-  setInterval(randomizePopulation, 3000); // Randomize population every 3 seconds
-</script>
+    renderTable();
+    setInterval(randomizePopulation, 3000); // Randomize population every 3 seconds
+  </script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
