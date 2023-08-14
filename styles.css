@@ -15,10 +15,14 @@ thead {
     background-color: rgb(206, 206, 206);
 }
 
+footer {
+    padding-left: 15rem;
+}
+
 header p {
     font-size: 1rem;
-    margin: 2rem 15.5rem 0 15.5rem;
-    padding-bottom: 1vw;
+    margin: 2rem 14rem 0 14rem;
+    padding-bottom: 1rem;
 }
 
 .registration {
@@ -34,4 +38,9 @@ header p {
 .btn-custom:hover {
     background-color: #0d9ba562;
     color: black;
+}
+
+.col-md-6 h3,
+.col-md-12 h3 {
+    font-weight: bold;
 }
