@@ -28,7 +28,6 @@ header p {
 .registration {
     padding: 2rem 30rem 2rem 30rem;
     margin-bottom: 5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn-custom {
@@ -48,7 +47,7 @@ header p {
 
 .names,
 .session {
-    padding: 0 15.5rem 0 15.5rem;
+    padding: 2rem 15.5rem 0 15.5rem;
     margin-top: 5rem;
 }
 
@@ -59,4 +58,14 @@ header p {
 
 .details {
     margin-top: 0.5rem;
+}
+
+.navbar-brand {
+    margin-right: auto;
+    margin-left: 5rem;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    
 }

@@ -24,8 +24,35 @@
       what's possible in the world of technology!</p>
   </header>
 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://logowik.com/content/uploads/images/lisbon-web-summit1693.jpg" alt="Logo" width="30"
+          height="30" class="d-inline-block align-top">
+        Web Summit 2023
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Sessions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html">Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Form</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <section class="names mb-5">
-    <h2 class="text-center mb-4">Users Registered</h2>
+    <h2 class="text-center mb-4"><strong>Users Registered</strong></h2>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
@@ -38,6 +65,30 @@
         </thead>
         <tbody>
           <!-- dynamically insert Users -->
+          <!-- <tr>
+            <td>Session 1</td>
+            <td>Speaker A</td>
+            <td>August 20, 2023</td>
+            <td>10:00 AM</td>
+          </tr>
+          <tr>
+            <td>Session 2</td>
+            <td>Speaker B</td>
+            <td>August 20, 2023</td>
+            <td>11:00 AM</td>
+          </tr>
+          <tr>
+            <td>Session 3</td>
+            <td>Speaker C</td>
+            <td>August 20, 2023</td>
+            <td>12:00 PM</td>
+          </tr>
+          <tr>
+            <td>Session 4</td>
+            <td>Speaker D</td>
+            <td>August 20, 2023</td>
+            <td>1:00 PM</td>
+          </tr> -->
         </tbody>
       </table>
     </div>
@@ -67,132 +118,13 @@
       </div>
     </div>
   </footer>
-
-  <!-- <div style="overflow-x: auto;">
-  <table role="table" aria-label="Country Information">
-    <thead>
-      <tr>
-        <th scope="col" data-column="name">Country Name</th>
-        <th scope="col" data-column="population">Population</th>
-        <th scope="col" data-column="languages">Languages Spoken</th>
-
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-
-  <button id="removeTable">Remove Table</button>
-  <button id="removeCountry">Remove Country</button>
-
-  <fieldset>
-    <legend>Add country to the table</legend>
-    Country Name: <input type="text" id="countryName" required><br>
-    Population: <input type="number" id="population" required><br>
-    Languages Spoken: <input type="text" id="languages" required><br>
-    <button id="addRow" type="submit">Add Row</button>
-  </fieldset>
-  
-</div> -->
-
   <script>
-    const countries = [
-      { name: "United States", population: 331002651, languages: "English" },
-      { name: "China", population: 1439323776, languages: "Chinese" },
-      { name: "India", population: 1380004385, languages: "Hindi, English" },
-      { name: "Brazil", population: 212559417, languages: "Portuguese" },
-      { name: "Russia", population: 145934462, languages: "Russian" },
-      { name: "Japan", population: 126476461, languages: "Japanese" },
-      { name: "Mexico", population: 128932753, languages: "Spanish" },
-      { name: "Germany", population: 83783942, languages: "German" },
-      { name: "Egypt", population: 102334404, languages: "Arabic" },
-      { name: "South Korea", population: 51269185, languages: "Korean" },
-    ];
 
-    const tableBody = document.querySelector("tbody");
-    const tableHeader = document.querySelector("thead");
-
-    const removeTableBtn = document.getElementById("removeTable");
-
-    const removeCountryBtn = document.getElementById("removeCountry");
-
-    const addCountryBtn = document.getElementById("addRow");
-
-    const countryNameInput = document.getElementById("countryName");
-    const populationInput = document.getElementById("population");
-    const languagesInput = document.getElementById("languages");
-
-    function renderTable() {
-      tableBody.innerHTML = "";
-      countries.forEach((country) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-        <td>${country.name}</td>
-        <td>${country.population.toLocaleString()}</td>
-        <td>${country.languages}</td>
-      `;
-        tableBody.appendChild(row);
-      });
-    }
-
-    function sortTable(column) {
-      countries.sort((a, b) => a[column] > b[column] ? 1 : -1);
-      renderTable();
-    }
-
-    function randomizePopulation() {
-      countries.forEach((country) => {
-        const randomChange = Math.floor(Math.random() * 1000000) - 500000;
-        country.population += randomChange;
-      });
-      renderTable();
-    }
-
-    tableHeader.addEventListener("click", (event) => {
-      if (event.target.dataset.column) {
-        sortTable(event.target.dataset.column);
-      }
-    });
-
-    removeTableBtn.addEventListener("click", () => {
-      if (document.querySelector("table")) {
-        document.querySelector("table").remove();
-        removeCountryBtn.remove();
-      }
-    });
-
-    removeCountryBtn.addEventListener("click", () => {
-      countries.splice(countries.length - 1, 1);
-      renderTable();
-    });
-
-    addCountryBtn.addEventListener("click", () => {
-      if (countryNameInput.value !== '' && populationInput.value !== '' && languagesInput.value !== '') {
-        const newCountry = {
-          name: countryNameInput.value,
-          population: parseInt(populationInput.value),
-          languages: languagesInput.value,
-        };
-
-        countries.push(newCountry);
-
-        countryNameInput.value = "";
-        populationInput.value = "";
-        languagesInput.value = "";
-
-        renderTable();
-      }
-    });
-
-    renderTable();
-    setInterval(randomizePopulation, 3000); // Randomize population every 3 seconds
   </script>
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
-
 </body>
 
 </html>

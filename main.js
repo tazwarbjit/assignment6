@@ -1,15 +1,11 @@
-// import users from 'script.js';
+// import { addUser } from "script.js";
 
-// const userName = document.getElementById('name');
-// const userEmail = document.getElementById('email');
-// const userOrganization = document.getElementById('organization');
-// const userSession = document.getElementById('session');
-
-// users = 
-
+// model popup registration confirmation
 $(document).ready(() => {
     $("#registration-form").submit((event) => {
-    event.preventDefault();
-    $("#successModal").modal("show");
+        event.preventDefault();
+        $("#successModal").modal("show");
     });
 });
+
+// document.querySelector('.btn-custom').addEventListener('click', addUser);
