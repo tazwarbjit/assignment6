@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Web Summit Conference Registration 2023</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -68,8 +69,7 @@
             </div>
             <div class="form-group">
                 <label for="session">Preferred Session</label>
-                <select class="form-control" id="session" name="session" required>
-                    <option value="" disabled selected>Select a session...</option>
+                <select id="session" name="session" required multiple>
                     <option value="Session 1">Session 1</option>
                     <option value="Session 2">Session 2</option>
                     <option value="Session 3">Session 3</option>
@@ -187,9 +187,9 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
-
 </html>

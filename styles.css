@@ -27,7 +27,6 @@ header p {
 
 .registration {
     padding: 2rem 30rem 2rem 30rem;
-    margin-bottom: 5rem;
 }
 
 .btn-custom {
@@ -48,7 +47,6 @@ header p {
 .names,
 .session {
     padding: 2rem 15.5rem 0 15.5rem;
-    margin-top: 5rem;
 }
 
 .btn {
@@ -70,7 +68,7 @@ header p {
 }
 
 .modal-footer strong {
-    margin-right: 5rem;
+    margin-right: 5.5rem;
 }
 
 .smaller-form {

@@ -71,4 +71,6 @@ $(document).ready(() => {
         $('.session').css("display", "none");
         $('.names').css("display", "block");
     });
+
+    new MultiSelectTag('session');
 });
