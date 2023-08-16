@@ -37,20 +37,51 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Sessions</a>
+                        <a class="nav-link active" id="form">Form</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="members.html">Members</a>
+                        <a class="nav-link" id="sessions">Sessions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="registration.html">Form</a>
+                        <a class="nav-link" id="members">Members</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="session mb-5">
+    <!-- Registration Form -->
+    <section class="registration mb-5">
+        <h2 class="text-center mb-4"><strong>Registration Form</strong></h2>
+        <form id="registration-form" class="smaller-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="organization">Organization</label>
+                <input type="text" class="form-control" id="organization" name="organization" required>
+            </div>
+            <div class="form-group">
+                <label for="session">Preferred Session</label>
+                <select class="form-control" id="session" name="session" required>
+                    <option value="" disabled selected>Select a session...</option>
+                    <option value="Session 1">Session 1</option>
+                    <option value="Session 2">Session 2</option>
+                    <option value="Session 3">Session 3</option>
+                    <option value="Session 4">Session 4</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-custom btn-sm">Register</button>
+        </form>
+    </section>
+
+    <!-- Session table -->
+    <section class="session mb-5" style="display: none;">
         <h2 class="text-center mb-4"><strong>Session Schedule</strong></h2>
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -92,6 +123,25 @@
         </div>
     </section>
 
+    <!-- Registered Users -->
+    <section class="names mb-5" style="display: none;">
+        <h2 class="text-center mb-4"><strong>Users Registered</strong></h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Organization</th>
+                        <th>Preferred Session</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-dark text-light py-4">
         <div class="container">
@@ -116,6 +166,30 @@
             </div>
         </div>
     </footer>
+    <!-- confirmation modal popup -->
+    <div class="modal fade" id="successModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel"><strong>Registration Successful</strong></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Thank you for registering! You're all set to attend the Web Summit 2023.
+                    Your name is added to the members list.
+                </div>
+                <div class="modal-footer">
+                    <strong>WELCOME TO THE WEB SUMMIT 2023</strong>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
 
 </html>

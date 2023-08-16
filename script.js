@@ -1,40 +1,74 @@
-const users = [];
+$(document).ready(() => {
+    const users = [];
+    const tableBody = $(".table-body");
+    const userName = $("#name");
+    const userEmail = $("#email");
+    const userOrganization = $("#organization");
+    const userSession = $("#session");
 
-const userName = document.getElementById('name');
-const userEmail = document.getElementById('email');
-const userOrganization = document.getElementById('organization');
-const userSession = document.getElementById('session');
+    function renderUsers() {
+        tableBody.empty();
+        users.forEach((user) => {
+            const row = $("<tr>");
+            row.html(`
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.organization}</td>
+                <td>${user.session}</td>
+            `);
+            tableBody.append(row);
+        });
+    }
 
-const tableBody = document.querySelector("tbody");
+    function addUser(event) {
+        event.preventDefault();
+        $("#successModal").modal("show");
 
-function renderUsers() {
-    tableBody.innerHTML = "";
-    users.forEach((user) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${user.userName}</td>
-            <td>${user.userEmail}</td>
-            <td>${user.userOrganization}</td>
-            <td>${user.userSession}</td>
-            `;
-        tableBody.appendChild(row);
+        const user = {
+            name: userName.val(),
+            email: userEmail.val(),
+            organization: userOrganization.val(),
+            session: userSession.val()
+        };
+
+        users.push(user);
+
+        userName.val("");
+        userEmail.val("");
+        userOrganization.val("");
+        userSession.val("");
+
+        renderUsers();
+    }
+
+    $("#registration-form").submit((event) => {
+        addUser(event);
     });
-}
 
-export function addUser() {
-    const user = {
-        name: userName.value,
-        email: userEmail.value,
-        organization: userOrganization.value,
-        session: userSession.value
-    };
+    $("#form").click(() => {
+        $("#form").addClass("active");
+        $("#sessions").removeClass("active");
+        $("#members").removeClass("active");
+        $('.registration').css("display", "block");
+        $('.session').css("display", "none");
+        $('.names').css("display", "none");
+    });
 
-    users.push(user);
+    $("#sessions").click(() => {
+        $("#sessions").addClass("active");
+        $("#form").removeClass("active");
+        $("#members").removeClass("active");
+        $('.registration').css("display", "none");
+        $('.session').css("display", "block");
+        $('.names').css("display", "none");
+    });
 
-    userName.value = "";
-    userEmail.value = "";
-    userOrganization.value = "";
-    userSession.value = "";
-
-    renderUsers();
-}
+    $("#members").click(() => {
+        $("#members").addClass("active");
+        $("#sessions").removeClass("active");
+        $("#form").removeClass("active");
+        $('.registration').css("display", "none");
+        $('.session').css("display", "none");
+        $('.names').css("display", "block");
+    });
+});
