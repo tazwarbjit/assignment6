@@ -1,5 +1,5 @@
 # An online tech event registration portal created using HTML, Bootstrap 4 and JQuery. Frontend only.
-Live link: https://tazwarbjit.github.io/assignment6
+Live link: https://tazwarbjit.github.io/assignment7
 
 
 ## Step-by-step workflow with screenshots
